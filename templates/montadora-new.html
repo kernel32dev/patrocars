@@ -1,0 +1,42 @@
+@body = {{
+<div class="screen-center">
+    <h2>Adicionar Nova Montadora</h2>
+    <form action="/montadora/new" method="post">
+        <table class="form">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="nome">Nome:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="nome" name="nome" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pais">País:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="pais" name="pais" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ano_fundacao">Ano de Fundação:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="ano_fundacao" name="ano_fundacao" required min="1800" max="2024">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Adicionar Montadora</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+}}
+
+@include("page.html", { body })

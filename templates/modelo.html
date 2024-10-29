@@ -1,0 +1,41 @@
+@body = {{
+    <table class="data">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Montadora</th>
+                <th>Valor Referência</th>
+                <th>Motorização</th>
+                <th>Turbo</th>
+                <th>Automático</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for row in rows do {{
+                <tr>
+                    <td>@row.id</td>
+                    <td>@row.nome</td>
+                    <td>@row.montadora_id</td>
+                    <td>@row.valor_referencia</td>
+                    <td>@row.motorizacao.decimal()</td>
+                    <td>@row.turbo ? "sim" : "não"</td>
+                    <td>@row.automatico ? "sim" : "não"</td>
+                    <td>
+                        <form action="/modelo/delete/@row.id" method="post">
+                            <button type="submit">Apagar</button>
+                        </form>
+                    </td>
+                </tr>
+            }}
+        </tbody>
+    </table>
+    <p class="text-center">
+        <a href="/modelo/new">
+            <button>Criar novo modelo de veículo</button>
+        </a>
+    </p>
+}}
+
+@include("page.html", { body })

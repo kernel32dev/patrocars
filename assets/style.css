@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+a {
+    text-decoration: none;
+}
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 3lh;
+}
+table.data {
+    width: calc(100% - 4em);
+    margin: 2em;
+    border-collapse: collapse;
+}
+table.data td, table.data th {
+    border: 1px solid gray;
+    padding: 0.5rem;
+}
+table.form > tbody > tr > td:first-child {
+    text-align: right;
+}
+table.form > tbody > tr:last-child > td {
+    text-align: center;
+}
+button {
+    padding: 0.1em 0.5rem;
+    cursor: pointer;
+}
+.text-center {
+    text-align: center;
+}
+.header-title {
+    font-size: xx-large;
+    font-weight: bold;
+}
+.header-github {
+    font-size: xx-large;
+}
+nav.header-tabs {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+}
+nav.header-tabs > a {
+    padding: 0 1em;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 7rem;
+    color: black;
+}
+.header-tabs > a:hover {
+    background-color: #ffc285;
+}
+.screen-center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

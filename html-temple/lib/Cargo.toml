@@ -1,0 +1,9 @@
+[package]
+name = "html-temple"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+html-temple-parser = { path = "../parser" }
+html-temple-macros = { path = "../macros" }
+serde = "1"

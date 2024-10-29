@@ -1,0 +1,35 @@
+@body = {{
+    <table class="data">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Pais</th>
+                <th>Ano Fundação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for row in rows do {{
+                <tr>
+                    <td>@row.id</td>
+                    <td>@row.nome</td>
+                    <td>@row.pais</td>
+                    <td>@row.ano_fundacao</td>
+                    <td>
+                        <form action="/montadora/delete/@row.id" method="post">
+                            <button type="submit">Apagar</button>
+                        </form>
+                    </td>
+                </tr>
+            }}
+        </tbody>
+    </table>
+    <p class="text-center">
+        <a href="/montadora/new">
+            <button>Criar nova montadora</button>
+        </a>
+    </p>
+}}
+
+@include("page.html", { body })

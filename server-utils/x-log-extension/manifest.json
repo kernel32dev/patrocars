@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "X-Log Header Logger",
+  "description": "exibe no console todos os headers x-log que chegam do servidor",
+  "version": "1.0",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "tabs"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "server-logs.js"
+      ]
+    }
+  ]
+}

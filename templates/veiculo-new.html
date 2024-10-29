@@ -1,0 +1,78 @@
+@body = {{
+<div class="screen-center">
+    <h2>Adicionar Novo Veículo</h2>
+    <form action="/veiculo/new" method="post">
+        <table class="form">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="modelo_id">Modelo:</label>
+                    </td>
+                    <td>
+                        <select id="modelo_id" name="modelo_id" required>
+                            @for modelo in modelos do {{
+                                <option value="@modelo[0]">@modelo[1]</option>
+                            }}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="cor">Cor:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="cor" name="cor" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ano_fabricacao">Ano de Fabricação:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="ano_fabricacao" name="ano_fabricacao" required min="1900" max="2024">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="ano_modelo">Ano do Modelo:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="ano_modelo" name="ano_modelo" required min="1900" max="2024">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="valor">Valor:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="valor" name="valor" required step="0.01">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="placa">Placa:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="placa" name="placa" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="vendido">Vendido:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="vendido" name="vendido" value="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Adicionar Veículo</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+}}
+
+@include("page.html", { body })

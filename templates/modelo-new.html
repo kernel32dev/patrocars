@@ -1,0 +1,70 @@
+@body = {{
+<div class="screen-center">
+    <h2>Adicionar Novo Modelo de Veículo</h2>
+    <form action="/modelo/new" method="post">
+        <table class="form">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="nome">Nome:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="nome" name="nome" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="montadora_id">Montadora ID:</label>
+                    </td>
+                    <td>
+                        <select id="montadora_id" name="montadora_id" required>
+                            @for montadoras in montadoras do {{
+                                <option value="@montadoras[0]">@montadoras[1]</option>
+                            }}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="valor_referencia">Valor de Referência:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="valor_referencia" name="valor_referencia" required step="0.01">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="motorizacao">Motorização:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="motorizacao" name="motorizacao" required step="0.1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="turbo">Turbo:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="turbo" name="turbo" value="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="automatico">Automático:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="automatico" name="automatico" value="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Adicionar Modelo de Veículo</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+}}
+
+@include("page.html", { body })
